@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            taskDOM
+        </title>
+    </head>
+    <body>
+            <input type="button" value="Generate a table." onclick="table_generate()">
+
+    </body>
+<script>
+var data=[{
+             "FirstName":"Diksha",
+             "lastName":"Arora", 
+             "Email":"dikshaarora4897@gmail.com",
+             "Id":1,
+             "PhoneNo":8007827678,
+             "Designation":"software Trainee",
+             "DOB":"04/08/1997"
+
+         },{
+            "FirstName":"Nidhi",
+             "lastName":"Arora", 
+             "Email":"nidhiarora180996@gmail.com",
+             "Id":1,
+             "PhoneNo":8007854328,
+             "Designation":"software Engineer",
+             "DOB":"18/09/1997"
+         },
+         {
+            "FirstName":"Anjali",
+             "lastName":"Arora", 
+             "Email":"Anjaliarora1809096@gmail.com",
+             "Id":1,
+             "PhoneNo":80056784328,
+             "Designation":"software Engineer Trainee",
+             "DOB":"19/07/1997"
+         },
+         {
+            "FirstName":"harish",
+             "lastName":"Arora", 
+             "Email":"nidhiarora180996@gmail.com",
+             "Id":1,
+             "PhoneNo":8067854328,
+             "Designation":"software Engineer",
+             "DOB":"18/09/1997"
+         },
+         {
+            "FirstName":"amol",
+             "lastName":"Arora", 
+             "Email":"nidhiarora180996@gmail.com",
+             "Id":1,
+             "PhoneNo":8007854328,
+             "Designation":"software Engineer",
+             "DOB":"18/09/1997"
+         },
+         {
+            "FirstName":"shivangi",
+             "lastName":"Arora", 
+             "Email":"nidhiarora180996@gmail.com",
+             "Id":1,
+             "PhoneNo":8007854328,
+             "Designation":"software Engineer",
+             "DOB":"18/09/1997"
+         },
+         {
+            "FirstName":"aarushi",
+             "lastName":"Arora", 
+             "Email":"nidhiarora180996@gmail.com",
+             "Id":1,
+             "PhoneNo":8007854328,
+             "Designation":"software Engineer trainee",
+             "DOB":"18/09/1997"
+         },
+         {
+            "FirstName":"aayush",
+             "lastName":"Arora", 
+             "Email":"nidhiarora180996@gmail.com",
+             "Id":1,
+             "PhoneNo":8007854328,
+             "Designation":"software Engineer trainnee",
+             "DOB":"18/09/1997"
+         }
+        ]
+        
+
+function table_generate() {
+    var col = [];
+        for (var i = 0; i < data.length; i++) {
+            for (var key in data[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+  // get the reference for the body
+  var body = document.getElementsByTagName("body")[0];
+
+  // creates a <table> element and a <tbody> element
+  var table = document.createElement("table");
+  var tableBody = document.createElement("tbody");
+//creating cells
+ 
+    // creates a table row
+    var row = document.createElement("tr");
+
+    for (var j = 0; j < col.length; j++) {
+      // Create a <td> element and a text node, make the text
+      // node the contents of the <td>, and put the <td> at
+      // the end of the table row
+     
+      var th = document.createElement("th");
+      th.innerHTML = col[j]
+      row.appendChild(th);
+     
+    }
+
+    // add the row to the end of the table body
+    tableBody.appendChild(row);
+ 
+
+
+
+
+  // creating all cells
+  for (var i = 0; i < data.length; i++) {
+    // creates a table row
+    var row = document.createElement("tr");
+
+    for (var j = 0; j < col.length; j++) {
+      // Create a <td> element and a text node, make the text
+      // node the contents of the <td>, and put the <td> at
+      // the end of the table row
+     
+      var cell = document.createElement("td");
+      cell.innerHTML=data[i][col[j]];
+      row.appendChild(cell);
+     
+    }
+
+    // add the row to the end of the table body
+    tableBody.appendChild(row);
+  }
+
+  // put the <tbody> in the <table>
+        table .appendChild(tableBody);
+  // appends <table> into <body>
+  body.appendChild(table );
+  // sets the border attribute of tbl to 2;
+  table.setAttribute("border", "2");
+}
+
+</script>
+</html>
