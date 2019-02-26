@@ -40,7 +40,7 @@ var data=[{
          {
             "FirstName":"harish",
              "lastName":"Arora", 
-             "Email":"nidhiarora180996@gmail.com",
+             "Email":"harisharora180996@gmail.com",
              "Id":1,
              "PhoneNo":8067854328,
              "Designation":"software Engineer",
@@ -49,7 +49,7 @@ var data=[{
          {
             "FirstName":"amol",
              "lastName":"Arora", 
-             "Email":"nidhiarora180996@gmail.com",
+             "Email":"amolarora180996@gmail.com",
              "Id":1,
              "PhoneNo":8007854328,
              "Designation":"software Engineer",
@@ -58,7 +58,7 @@ var data=[{
          {
             "FirstName":"shivangi",
              "lastName":"Arora", 
-             "Email":"nidhiarora180996@gmail.com",
+             "Email":"shivangiarora180996@gmail.com",
              "Id":1,
              "PhoneNo":8007854328,
              "Designation":"software Engineer",
@@ -67,7 +67,7 @@ var data=[{
          {
             "FirstName":"aarushi",
              "lastName":"Arora", 
-             "Email":"nidhiarora180996@gmail.com",
+             "Email":"aaarora180996@gmail.com",
              "Id":1,
              "PhoneNo":8007854328,
              "Designation":"software Engineer trainee",
@@ -76,7 +76,7 @@ var data=[{
          {
             "FirstName":"aayush",
              "lastName":"Arora", 
-             "Email":"nidhiarora180996@gmail.com",
+             "Email":"aydarora180996@gmail.com",
              "Id":1,
              "PhoneNo":8007854328,
              "Designation":"software Engineer trainnee",
@@ -86,33 +86,33 @@ var data=[{
         
 
 function table_generate() {
-    var col = [];
-        for (var i = 0; i < data.length; i++) {
-            for (var key in data[i]) {
-                if (col.indexOf(key) === -1) {
+    var col = []; //making col as array
+        for (var i = 0; i < data.length; i++) {    //loop till the data will iterate the objects
+            for (var key in data[i]) {             //loop of key will be iterate 
+                if (col.indexOf(key) === -1) {     
                     col.push(key);
                 }
             }
         }
+    //for header
 
   // get the reference for the body
-  var body = document.getElementsByTagName("body")[0];
+  var body = document.getElementsByTagName("body");
 
   // creates a <table> element and a <tbody> element
   var table = document.createElement("table");
   var tableBody = document.createElement("tbody");
-//creating cells
+
  
     // creates a table row
     var row = document.createElement("tr");
 
     for (var j = 0; j < col.length; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
+      // Create a <td> element , and put the <td> at
       // the end of the table row
      
-      var th = document.createElement("th");
-      th.innerHTML = col[j]
+      var th = document.createElement("th");  //for header of table
+      th.innerHTML = col[j] //for header
       row.appendChild(th);
      
     }
@@ -130,12 +130,11 @@ function table_generate() {
     var row = document.createElement("tr");
 
     for (var j = 0; j < col.length; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
+      // Create a <td> element  and put the <td> at
       // the end of the table row
      
       var cell = document.createElement("td");
-      cell.innerHTML=data[i][col[j]];
+      cell.innerHTML=data[i][col[j]];  //value of key will be stored in table
       row.appendChild(cell);
      
     }
